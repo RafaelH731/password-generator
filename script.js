@@ -37,37 +37,47 @@ var isSpecialCharacters = confirm("Contains Special Characters?")
 var isNumbers = confirm("Contains Numbers?")
 var possiblePassword = []
 
+console.log(userPassword.lowerCase.length)
 
-if (isLower == true){possiblePassword = possiblePassword.concat(userPassword.lowerCase)}
+//Complete for loops to push onto the empty possiblePassword Array
 
+if (isLower == true){
+  for (var i = 0; i < userPassword.lowerCase.length; i++){
+    possiblePassword.push(userPassword.lowerCase[i])
+  }
 
-if (isUpper == true){possiblePassword = possiblePassword.concat(userPassword.upperCase)}
+}
+if (isUpper === true){
+  for (var i = 0; i < userPassword.upperCase.length; i++){
+    possiblePassword.push(userPassword.upperCase[i])
+  }
 
+}
 
-if (isSpecialCharacters == true){possiblePassword = possiblePassword.concat(userPassword.specialCharacters)}
+if (isSpecialCharacters == true){
+  for (var i = 0; i < userPassword.specialCharacters.length; i++){
+    possiblePassword.push(userPassword.specialCharacters[i])
+  }
 
+}
 
-if (isNumbers == true){possiblePassword = possiblePassword.concat(userPassword.numbers)}
+if (isNumbers == true){
+  for (var i = 0; i < userPassword.numbers.length; i++){
+    possiblePassword.push(userPassword.numbers[i])
+  }
+
+}
+console.log(possiblePassword)
+
+var passwordResult = []
+
 
 for (var i = 0; i < userLength; i++ ) {
-  console.log(possiblePassword[Math.random() * possiblePassword.length]);
+  console.log();
+  passwordResult.push(possiblePassword[Math.floor(Math.random() * possiblePassword.length)])
 }
 
-//change to finalPassword
-let finalPassword = possiblePassword.join ("");
-return 
+//return the result 
+return passwordResult.join("")
 }
-  //2.Identify and collect the buckets the user has chosen
-  //3. Create a guaranteed collection
-  //4. Create a password variable, and array
-  //5. Randomly draw a characters
-  //6. Put the character on the password variable(?)
-  //7. Repeat 5 and 6 as many as specified (floor loop)
-  //8. Loop throught the guaranteed elements, replace elements in the password array
-  //9. Join characters in the password array into a string
-  //10. Return the password string 
-
-
-// while (userPasswordLength < 5 || userPasswordLength >50){
-  //  userPasswordLength = window.prompt("Password length must be between 5 and 50 characters");
- // }
+  
