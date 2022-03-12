@@ -24,56 +24,39 @@ var userPassword = {
     passwordLength: "",
     lowerCase : ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
     upperCase : ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
-    specialCharacters : [" ","!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","^","_","`","{","|","}","~"],
-    numbers : ["0","1","2","3","4","5","6","7","8","9"],
+    specialCharacters : ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","^","_","`","{","|","}","~"],
+    numbers : [0,1,2,3,4,5,6,7,8,9],
 }
 function generatePassword(){
   //1. Get user preferences
 
 var userLength = prompt("Password Length (Between 5 and 25 characters)")
-var isLower = confirm("Containsn Lowercase letters?")
+var isLower = confirm("Contains Lowercase letters?")
 var isUpper = confirm("Contains Uppercase Letters?")
 var isSpecialCharacters = confirm("Contains Special Characters?")
 var isNumbers = confirm("Contains Numbers?")
+var possiblePassword = []
 
-if (isLower == true){
-  for (var i = 0; i< userLength; i++){
-    console.log (isLower = 
-      userPassword.lowerCase[Math.floor(Math.random() * userPassword.lowerCase)]);
 
-  }
+if (isLower == true){possiblePassword = possiblePassword.concat(userPassword.lowerCase)}
+
+
+if (isUpper == true){possiblePassword = possiblePassword.concat(userPassword.upperCase)}
+
+
+if (isSpecialCharacters == true){possiblePassword = possiblePassword.concat(userPassword.specialCharacters)}
+
+
+if (isNumbers == true){possiblePassword = possiblePassword.concat(userPassword.numbers)}
+
+for (var i = 0; i < userLength; i++ ) {
+  console.log(possiblePassword[Math.random() * possiblePassword.length]);
 }
 
-if (isUpper == true){
-  for (var i = 0; i< userLength; i++){
-    console.log (isUpper = 
-      userPassword.upperCase[Math.floor(Math.random() * userPassword.upperCase)]);
-
-  }
-}
-
-if (isSpecialCharacters == true){
-  for (var i = 0; i< userLength; i++){
-    console.log (isSpecialCharacters = 
-      userPassword.specialCharacters[Math.floor(Math.random() * userPassword.specialCharacters)]);
-
-  }
-}
-
-if (isNumbers == true){
-  for (var i = 0; i< userLength; i++){
-    console.log (isLower = 
-      userPassword.numbers[Math.floor(Math.random() * userPassword.numbers)]);
-
-  }
-}
-
-console.log(passwordLength);
-
-let userPassword = password.join ("");
-
+//change to finalPassword
+let finalPassword = possiblePassword.join ("");
 return 
-
+}
   //2.Identify and collect the buckets the user has chosen
   //3. Create a guaranteed collection
   //4. Create a password variable, and array
@@ -84,7 +67,7 @@ return
   //9. Join characters in the password array into a string
   //10. Return the password string 
 
-}
+
 // while (userPasswordLength < 5 || userPasswordLength >50){
   //  userPasswordLength = window.prompt("Password length must be between 5 and 50 characters");
  // }
