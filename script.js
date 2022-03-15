@@ -30,7 +30,7 @@ var userPassword = {
 function generatePassword(){
   //1. Get user preferences
 
-var userLength = prompt("Password Length (Between 5 and 25 characters)")
+var userLength = prompt("Password Length (Between 8 and 128 characters)")
 var isLower = confirm("Contains Lowercase letters?")
 var isUpper = confirm("Contains Uppercase Letters?")
 var isSpecialCharacters = confirm("Contains Special Characters?")
@@ -40,6 +40,8 @@ var possiblePassword = []
 console.log(userPassword.lowerCase.length)
 
 //Complete for loops to push onto the empty possiblePassword Array
+
+while (userLength < 8 || userLength > 128);
 
 if (isLower == true){
   for (var i = 0; i < userPassword.lowerCase.length; i++){
@@ -81,3 +83,4 @@ for (var i = 0; i < userLength; i++ ) {
 return passwordResult.join("")
 }
   
+
