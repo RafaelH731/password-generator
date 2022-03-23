@@ -41,7 +41,11 @@ console.log(userPassword.lowerCase.length)
 
 //Complete for loops to push onto the empty possiblePassword Array
 
-while (userLength < 8 || userLength > 128);
+while (userLength < 8 || userLength > 128) {
+
+}
+
+
 
 if (isLower == true){
   for (var i = 0; i < userPassword.lowerCase.length; i++){
