@@ -9,5 +9,7 @@ I was helped immensely by TA Nicholas Gambino, he helped me in office hours to d
 
 ![Screenshot of Application](images/password-generator-screenshot.png)
 
-Above is a screen shot of the webpage 
+Below is link to Website  
 
+
+[Password Generator](https://rafaelh731.github.io/password-generator/)
