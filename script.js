@@ -31,6 +31,12 @@ function generatePassword(){
   //1. Get user preferences
 
 var userLength = prompt("Password Length (Between 8 and 128 characters)")
+console.log(userLength)
+if (userLength === NaN || +userLength < 8 || +userLength > 128) {
+  alert("please enter a number between 8 and 128");
+  return "Please generate a password again, and enter a number between 8 and 128";
+}
+
 var isLower = confirm("Contains Lowercase letters?")
 var isUpper = confirm("Contains Uppercase Letters?")
 var isSpecialCharacters = confirm("Contains Special Characters?")
@@ -41,9 +47,7 @@ console.log(userPassword.lowerCase.length)
 
 //Complete for loops to push onto the empty possiblePassword Array
 
-while (userLength < 8 || userLength > 128) {
 
-}
 
 
 
